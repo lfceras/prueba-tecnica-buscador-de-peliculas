@@ -1,8 +1,9 @@
+const {VITE_API_KEY} = import.meta.env
 export const searchMovies = async ({query})=>{
   if(query === '') return 
 
   try {
-    const response = await fetch(`https://www.omdbapi.com/?s=${query}&apikey=b0296ee5`)
+    const response = await fetch(`https://www.omdbapi.com/?s=${query}&apikey=${VITE_API_KEY}`)
     const data = await response.json()
 
     const results = data.Search
